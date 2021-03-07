@@ -137,14 +137,14 @@ const MultiselectDropdown: React.FC<IMultiselectDropdownProps> = props => {
 
   useEffect(() => {
     if (!Lo.isEmpty(data) && value) {
-      setLabelV(`${value.length} selected`);
+      setLabelV(`${value.length} ${value.length > 1 ? 'selecionados' : 'selecionado'}`);
       setSelectedItems(Lo.filter(data, d => value.includes(d.value)));
     }
   }, [value, data]);
 
   useEffect(() => {
     if (value) {
-      setLabelV(`${value.length} selected`);
+      setLabelV(`${value.length} ${value.length > 1 ? 'selecionados' : 'selecionado'}`);
       setSelectedItems(Lo.filter(data, d => value.includes(d.value)));
     }
   }, [value, data]);
